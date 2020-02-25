@@ -1,0 +1,115 @@
+// media query
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$pc: 1088px; // PC
+$tab: 959px; // タブレット
+$sp: 600px; // スマホ
+
+@mixin lpc {
+	@media screen and (min-width: ($pc)) {
+		@content;
+	}
+}
+@mixin mpc {
+	@media screen and (max-width: ($pc - 1)) {
+		@content;
+	}
+}
+@mixin tab-pc {
+	@media screen and (min-width: ($tab)) and (max-width: ($pc - 1)) {
+		@content;
+	}
+}
+@mixin tab {
+	@media screen and (max-width: ($tab)) {
+		@content;
+	}
+}
+@mixin sp-tab {
+	@media screen and (min-width: ($sp)) and (max-width: ($tab - 1)) {
+		@content;
+	}
+}
+@mixin sp {
+	@media screen and (max-width: ($sp - 1)) {
+		@content;
+	}
+}
+
+//-------------------------------
+// break pointの追加
+//-------------------------------
+
+@mixin v_break($breakpoint) {
+	@media screen and (max-width: #{$breakpoint}px) {
+		.vpc#{$breakpoint} {
+			display: none;
+		}
+	}
+
+	@media print,screen and (min-width: #{1 + $breakpoint}px) {
+		.vsp#{$breakpoint} {
+			display: none;
+		}
+	}
+}
+
+//ex
+@include v_break(1024);
+
+
+// design system
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// OOCSS
+@for $margin from 0 through 24 {
+	.mt#{$margin * 5} {
+		margin-top: 5px * $margin;
+	}
+	.mb#{$margin * 5} {
+		margin-bottom: 5px * $margin;
+	}
+
+//デザイン上PCの何倍か
+$multiple: .85;
+
+	@mixin sp {
+		.mt#{$margin * 5} {
+			margin-top: $multiple * (5px * $margin);
+		}
+		.mb#{$margin * 5} {
+			margin-bottom: $multiple * (5px * $margin);
+		}
+	}
+}
+
+// Utilities
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.fl_r {	float: right;}
+.fl_l {	float: left;}
+.ta_c {	text-align: center;}
+.ta_l {	text-align: left;}
+.ta_r {	text-align: right;}
+
+//-------------------------------
+// letter-spacing
+//-------------------------------
+
+.ls0 {	letter-spacing: 0;}
+.ls20 {	letter-spacing: 0.07em;}
+.ls60 {	letter-spacing: 0.1em;}
+.ls100 { letter-spacing: 0.2em;}
+.ls150 { letter-spacing: 0.25em;}
+.ls200 { letter-spacing: 0.4em;}
+
+//-------------------------------
+// line-height
+//-------------------------------
+
+.lh11 {	line-height: 1.1em;}
+.lh13 {	line-height: 1.3em;}
+.lh14 {	line-height: 1.4em;}
+.lh15 {	line-height: 1.5em;}
+.lh16 {	line-height: 1.6em;}
+.lh18 {	line-height: 1.8em;}
