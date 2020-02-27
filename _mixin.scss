@@ -125,24 +125,27 @@ $multiple: .85;
 .ta_l {text-align: left;}
 .ta_r {text-align: right;}
 
+.cf:after { content: ""; display: block; clear: both; height:0; }
+.cf { zoom:1; }
+
 //-------------------------------
 // letter-spacing
 //-------------------------------
 
-.ls0 {letter-spacing: 0;}
-.ls20 {letter-spacing: 0.07em;}
-.ls60 {letter-spacing: 0.1em;}
-.ls100 {letter-spacing: 0.2em;}
-.ls150 {letter-spacing: 0.25em;}
-.ls200 {letter-spacing: 0.4em;}
-
-//-------------------------------
-// line-height
-//-------------------------------
-
-.lh11 {line-height: 1.1em;}
-.lh13 {line-height: 1.3em;}
-.lh14 {line-height: 1.4em;}
-.lh15 {line-height: 1.5em;}
-.lh16 {line-height: 1.6em;}
-.lh18 {line-height: 1.8em;}
+.ls0 {letter-spacing: 0 !important;}
+.ls20 {letter-spacing: .02em !important;}
+.ls40 {letter-spacing: .04em !important;}
+.ls60 {letter-spacing: .06em !important;}
+.ls80 {letter-spacing: .08em !important;}
+.ls100 {letter-spacing: .1em !important;}
+.ls150 {letter-spacing: .15e !important;}
+.ls200 {letter-spacing: .2em !important;}
+//-------------------------- !important- !important----
+// line-height !important
+//-------------------------- !important- !important----
+.lh11 {line-height: 1.1em !important;}
+.lh13 {line-height: 1.3em !important;}
+.lh14 {line-height: 1.4em !important;}
+.lh15 {line-height: 1.5em !important;}
+.lh16 {line-height: 1.6em !important;}
+.lh18 {line-height: 1.8em !important;}
