@@ -18,6 +18,17 @@
 <!-- js -->
 <script src="../common/js/jquery.js"></script>
 <script src="../common/js/jquery.rwdImageMaps.min.js"></script>
+<script src="js/jquery.jPrintArea.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(function(){
+    $('.printBtn').click(function(){
+      $.jPrintArea('.printArea')
+    });
+    $('.print').click(function(){
+      $.jPrintArea('.OPEN')
+    });
+  });
+</script>
 <script src="../common/js/main.js"></script>
 
 <!-- init -->
