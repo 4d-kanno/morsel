@@ -21,9 +21,9 @@
 <!-- rwdImageMaps -->
 <script src="common/js/jquery.rwdImageMaps.min.js"></script>
 <script>
-  $(function() {
-    $('img[usemap]').rwdImageMaps();
-  });
+	$(function() {
+		$('img[usemap]').rwdImageMaps();
+	});
 </script>
 
 <!-- magnific-popup -->
@@ -31,14 +31,14 @@
 <script src="common/js/jquery.magnific-popup.min.js"></script>
 <script>
 $(document).ready(function() {
-  $('.popup-youtube').magnificPopup({
-    type: 'iframe', //iframeで表示
-    // type: 'image', //画像で表示
-    mainClass: 'mfp-fade',
-    removalDelay: 160,
-    preloader: false,
-    fixedContentPos: false
-  });
+	$('.popup-youtube').magnificPopup({
+		type: 'iframe', //iframeで表示
+		// type: 'image', //画像で表示
+		mainClass: 'mfp-fade',
+		removalDelay: 160,
+		preloader: false,
+		fixedContentPos: false
+	});
 });
 </script>
 
@@ -51,52 +51,111 @@ $(document).ready(function() {
 <link rel="stylesheet" type="text/css" href="common/js/slick/slick-theme.css" />
 <link rel="stylesheet" type="text/css" href="common/js/slick/slick.css" />
 <script src="common/js/slick/slick.min.js"></script>
+<script>
+	$(window).on('load',function () {
+		$('.bxslider').slick({
+			fade: true,
+			autoplay: true,
+			autoplaySpeed: 5000,
+			speed: 1000,
+			dots: true,
+			arrows: true,
+			infinite: true,
+			focusOnSelect: false,
+			pauseOnHover: false,
+		});
+
+		var mainSlider = ".bxslider"; //メインスライダーid
+		var thumbnailSlider = ".bxslider_thumb"; //サムネイルスライダーid
+
+		$(thumbnailSlider).slick({
+			fade: true,
+			speed: 1000,
+			arrows: false,
+			asNavFor: mainSlider
+		});
+		//#thumbnail_sliderでクリックしたスライドをカレントにする
+		$(thumbnailSlider+" .slick-slide").on('click',function(){
+			var index = $(this).attr("data-slick-index");
+			$(thumbnailSlider).slick("slickGoTo",index,false);
+		});
+	});
+
+</script>
 
 <!-- flatHeightAll -->
 <script type="text/javascript" src="../common/js/jquery.flatHeightAll.min.js" type="text/javascript" charset="UTF-8"></script>
 <script>
-  $(function(){
-    $('.item').flatHeightAll();
-    $(window).resize(function(){$('.item').flatHeightAll();});
-  });
+	$(function(){
+		$('.item').flatHeightAll();
+		$(window).resize(function(){$('.item').flatHeightAll();});
+	});
 </script>
 
 <!-- jPrintArea.js -->
-<script src="js/jquery.jPrintArea.js" type="text/javascript"></script>
+<script src="common/js/jquery.jPrintArea.js" type="text/javascript"></script>
 <script type="text/javascript">
-  $(function(){
-    $('.printBtn').click(function(){
-      $.jPrintArea('.printArea')
-    });
-    $('.print').click(function(){
-      $.jPrintArea('.OPEN')
-    });
-  });
+	$(function(){
+		$('.printBtn').click(function(){
+			$.jPrintArea('.printArea')
+		});
+		$('.print').click(function(){
+			$.jPrintArea('.OPEN')
+		});
+	});
 </script>
 <script src="../common/js/main.js"></script>
 
-<!-- init -->
-<script type="text/javascript" src="/common/js/setdata.js" charset="UTF-8"></script>
 <style>
-  img {
-    max-width: 100%;
-  }
+	section {
+		margin-top: 30px;
+		padding-bottom: 30px;
+		border-bottom: 1px dotted #444;
+		text-align: center;
+	}
+	img {
+		max-width: 100%;
+	}
+	.slick-dotted.slick-slider {
+		max-width: 1024px;
+		max-height: 591px;
+		margin: 0 auto;
+	}
 </style>
 
 </head>
 
 <body>
-  <p>rwdImageMaps</p>
-  <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" usemap="#ImageMap" alt="" width="272" height="92">
-  <map name="ImageMap">
-    <area shape="circle" coords="71,71,70" href="#" alt="" />
-    <area shape="circle" coords="189,95,45" href="#" alt="" />
-    <area shape="circle" coords="287,96,46" href="#" alt="" />
-  </map>
+	<section>
+		<h2>rwdImageMaps</h2>
+		<img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" usemap="#ImageMap" alt="" width="272" height="92">
+		<map name="ImageMap">
+			<area shape="circle" coords="71,71,70" href="#" alt="" />
+			<area shape="circle" coords="189,95,45" href="#" alt="" />
+			<area shape="circle" coords="287,96,46" href="#" alt="" />
+		</map>
+	</section>
 
-  <div>
-    <a href="https://www.youtube.com/watch?v=Lnt9k15TQO8" class="popup-youtube">
-      <img class="pc" src="https://placehold.jp/20/3d4070/ffffff/960x250.png?text=magnific-popup" alt="">
-    </a>
-  </div>
+	<section>
+		<h2>magnific-popup</h2>
+		<a href="https://www.youtube.com/watch?v=Lnt9k15TQO8" class="popup-youtube">
+			<img class="pc" src="https://placehold.jp/20/999/fff/320x185.png?text=banner" alt="">
+		</a>
+	</section>
+
+	<section>
+		<h2>slick</h2>
+		<ul class="bxslider">
+			<li><img src="https://placehold.jp/20/999/fff/1024x591.png?text=slide1" alt=""></li>
+			<li><img src="https://placehold.jp/20/999/fff/1024x591.png?text=slide2" alt=""></li>
+			<li><img src="https://placehold.jp/20/999/fff/1024x591.png?text=slide3" alt=""></li>
+			<li><img src="https://placehold.jp/20/999/fff/1024x591.png?text=slide4" alt=""></li>
+		</ul>
+		<!-- <ul class="bxslider_thumb">
+			<li><img src="https://placehold.jp/20/999/fff/144x83.png?text=slide1" alt=""></li>
+			<li><img src="https://placehold.jp/20/999/fff/144x83.png?text=slide2" alt=""></li>
+			<li><img src="https://placehold.jp/20/999/fff/144x83.png?text=slide3" alt=""></li>
+			<li><img src="https://placehold.jp/20/999/fff/144x83.png?text=slide4" alt=""></li>
+		</ul> -->
+	</section>
 </body>
