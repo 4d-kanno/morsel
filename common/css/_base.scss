@@ -1,0 +1,124 @@
+//lpc(1032px~)
+@include lpc {};
+//mpc(~1031px)
+@include mpc {};
+//tab-pc(960px~1031px)
+@include tab-pc{};
+//tab(~959px)
+@include tab {};
+//sp-tab(600px~959px)
+@include sp-tab {};
+//sp(~599px)
+@include sp {};
+
+* {
+	box-sizing: border-box;
+	position: relative;
+}
+html {
+	font-size: 62.5%;
+	position: relative;
+	@include mpc {
+		font-size: 0.969932105vw;
+	};
+	@include tab {
+		font-size: 10px;
+	};
+}
+body {
+	font-size: 1.4rem;
+	line-height: 1.8;
+	font-family: "Noto Serif JP", YuMincho, "Yu Mincho","ヒラギノ明朝 ProN W6", "HiraMinProN-W6",-apple-system, blinkMacSystemFont, serif;
+	// font-family: "Noto Sans JP", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体",sans-serif;
+	//letter-spacing: 0.1em;
+	color: #333;
+	// visibility: hidden;
+}
+// .wf-active body,
+// .wf-inactive body {
+// 	visibility: visible;
+// }
+
+a {
+	color: #333;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.fCopy {
+	.wrap {
+		width: 100%;
+		font-family: "Noto Serif CJK JP", "Noto Serif JP", YuMincho, "Yu Mincho","ヒラギノ明朝 ProN W6", "HiraMinProN-W6",-apple-system, blinkMacSystemFont, serif;
+	}
+}
+
+// .serif {
+// 	font-family: "Noto Serif CJK JP", "Noto Serif JP", YuMincho, "Yu Mincho","ヒラギノ明朝 ProN W6", "HiraMinProN-W6",-apple-system, blinkMacSystemFont, serif;
+// }
+// .sans {
+// 	font-family: "Noto Sans CJK JP", "Noto Sans JP", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体",sans-serif;
+// }
+
+
+.wrap {
+	width: 100%;
+	max-width: 1440px;
+	margin: 0 auto;
+}
+.inner {
+  //コンテンツ幅 1024px 左右padding 32px
+	max-width: 1088px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 32px;
+	position: relative;
+	z-index: 999;
+	@include mpc {
+		padding: 0 3.491755577%;
+	};
+}
+img {
+	max-width: 100%;
+	vertical-align: bottom;
+	height: auto;
+}
+
+
+.sp {
+	display: none !important;
+}
+.tab {
+	display: none !important;
+}
+.tabOnly {
+	display: none !important;
+}
+
+@include tab {
+	.tab,.tabOnly {
+		display: block !important;
+	}
+	img.tab,img.tabOnly {
+		display: inline !important;
+	}
+	.tabNone {
+		display: none !important;
+	}
+};
+@include sp {
+	.sp,.tab {
+		display: block !important;
+	}
+	img.sp,img.tab {
+		display: inline !important;
+	}
+	.pc {
+		display: none !important;
+	}
+	.tabNone {
+		display: none !important;
+	}
+};

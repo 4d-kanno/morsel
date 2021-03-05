@@ -1,0 +1,63 @@
+//textshadow
+@mixin textshadow ($color: #000) {
+  text-shadow: $color 1px 1px 10px, $color -1px 1px 10px, $color 1px -1px 10px, $color -1px -1px 10px;
+}
+
+//mediaquery
+$pc: 1088px; // PC
+$tab: 959px; // タブレット
+$sp: 600px;  // スマホ
+
+@mixin lpc {
+  @media screen and (min-width: ($pc)) {
+    @content;
+  }
+}
+@mixin mpc {
+  @media screen and (max-width: ($pc - 1)) {
+    @content;
+  }
+}
+@mixin tab-pc {
+  @media screen and (min-width: ($tab)) and (max-width: ($pc - 1)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media screen and (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp-tab {
+  @media screen and (min-width: ($sp)) and (max-width: ($tab - 1)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media screen and (max-width: ($sp - 1)) {
+    @content;
+  }
+}
+
+//行間削除マージン
+//$num＝実寸マージン（rem）
+//$fz＝実寸フォントサイズ（rem）
+//$lh＝line-heightの数値
+
+//magine-top
+@mixin mt ($num,$fz,$lh) {
+  margin-top: ($num - ((($fz * $lh) - $fz) / 2));
+}
+//margin-bottom
+@mixin mb ($num,$fz,$lh){
+  margin-bottom: ($num - ((($fz * $lh) - $fz) / 2));
+}
+
+//padding-top
+@mixin pt ($num,$fz,$lh) {
+  padding-top: ($num - ((($fz * $lh) - $fz) / 2));
+}
+//padding-bottom
+@mixin pb ($num,$fz,$lh){
+  padding-bottom: ($num - ((($fz * $lh) - $fz) / 2));
+}

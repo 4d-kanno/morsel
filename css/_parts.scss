@@ -1,0 +1,42 @@
+
+#temp {
+  .pttl {
+    background: url(../../imgs/pttl_bg.jpg) no-repeat center center;
+    background-size: cover;
+  }
+  p {
+    + .smallTxt {
+      @include mt ($num:4.5rem, $fz:1rem, $lh:1.857142857);
+      @include sp {
+        @include mt ($num:3.375rem, $fz:1rem, $lh:1.857142857);
+      };
+    }
+  }
+  .inner {
+    + .inner {
+      margin-top: 6rem;
+    }
+    + .tabMenu {
+      margin-top: 6rem;
+    }
+    .clm {
+      + .clm {
+        margin-top: 10px;
+      }
+    }
+  }
+  .main {
+    .low_mv {
+      .imgArea {
+        background: url(../../imgs/mv_dammy.png) no-repeat left center;
+        background-size: cover;
+      }
+    }
+  }
+}
+.line-numbers.language-markup {
+  margin-top: 50px;
+}
+.titleA {
+  margin-bottom: 3rem;
+}

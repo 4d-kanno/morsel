@@ -1,0 +1,131 @@
+section {
+  margin-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px dotted #444;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* slick */
+.slick-dotted.slick-slider {
+  max-width: 1024px;
+  max-height: 591px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.slick-dots {
+  display: none !important;
+}
+
+.slick-slider {
+  max-width: 1024px;
+  max-height: 83px;
+  margin: 10px auto 0;
+  padding: 0;
+}
+
+/* modal */
+.modalArea {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #000;
+}
+
+.modalBg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.9);
+}
+
+.modalWrapper {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -70%);
+          transform: translate(-50%, -70%);
+  width: 70%;
+  max-width: 980px;
+  padding: 10px 30px;
+  background-color: #fff;
+  height: 70%;
+  overflow: auto;
+}
+
+.modalContents p {
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.closeModal {
+  position: absolute;
+  top: 0.1rem;
+  right: 0.8rem;
+  cursor: pointer;
+  font-size: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .modalContents {
+    margin-top: 10px;
+  }
+  .closeModal {
+    position: absolute;
+    top: 0.1rem;
+    cursor: pointer;
+    font-size: 40px;
+  }
+}
+
+.detailArea__tab {
+  display: flex;
+  justify-content: center;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.detailArea__tabItem {
+  width: 24.31818%;
+  color: #fff;
+  text-align: center;
+  padding: 8px 0;
+  position: relative;
+  font-size: 16px;
+  line-height: 2.0625;
+  letter-spacing: .1em;
+}
+
+.detailArea__tabItem:nth-child(1) {
+  margin-right: 2.72727%;
+}
+
+.detailArea__tabItem:hover {
+  cursor: pointer;
+}
+
+.detailArea__tabItem.n01 {
+  background: #666;
+}
+
+.detailArea__tabItem.n02 {
+  background: #c9bc7d;
+}
+
+.detailArea__figure {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.detailArea__figure .plan__basic {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */
