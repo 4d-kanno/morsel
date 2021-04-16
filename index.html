@@ -8,78 +8,19 @@
 
 	<!-- js -->
 	<script src="common/js/jquery.js"></script>
-
-	<!-- rwdImageMaps -->
-	<script src="common/js/jquery.rwdImageMaps.min.js"></script>
-	<script>
-		$(function() {
-			$('img[usemap]').rwdImageMaps();
-		});
-	</script>
-
-	<!-- magnific-popup -->
-	<link rel="stylesheet" type="text/css" href="common/css/magnific-popup.css" />
-	<script src="common/js/jquery.magnific-popup.min.js"></script>
-	<script>
-		$(document).ready(function () {
-			$('.popup-youtube').magnificPopup({
-				type: 'iframe', //iframeで表示
-				// type: 'image', //画像で表示
-				mainClass: 'mfp-fade',
-				removalDelay: 160,
-				preloader: false,
-				fixedContentPos: false
-			});
-		});
-	</script>
-
 	<!--「aos」CSSの読込-->
 	<link rel="stylesheet" type="text/css" href="common/css/aos.css" media="only screen and (min-width: 640px)" />
 	<!--「aos」JSの読込-->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
 
-	<!-- slick -->
-	<!-- <link rel="stylesheet" type="text/css" href="common/js/slick/slick-theme.css" />
-	<link rel="stylesheet" type="text/css" href="common/js/slick/slick.css" />
-	<script src="common/js/slick/slick.min.js"></script>
-	<script>
-		$(window).on('load',function () {
-			$('.bxslider').slick({
-				fade: true,
-				autoplay: true,
-				autoplaySpeed: 5000,
-				speed: 1000,
-				dots: true,
-				arrows: true,
-				infinite: true,
-				focusOnSelect: false,
-				pauseOnHover: false,
-			});
-		});
-	</script> -->
-
 	<!-- flatHeightAll -->
-	<script type="text/javascript" src="../common/js/jquery.flatHeightAll.min.js" type="text/javascript" charset="UTF-8"></script>
+	<script src="../common/js/jquery.flatHeightAll.min.js"></script>
 	<script>
 		$(function(){
-			$('.item').flatHeightAll();
-			$(window).resize(function(){$('.item').flatHeightAll();});
-		});
-	</script>
-
-	<!-- PrintArea -->
-	<script>
-		// plan print area
-		$(function () {
-			//個別印刷ボタンをクリックした時
-			$('.printButton').on('click', function () {
-				$(this).parents('.typeBox-wrap').addClass('print-on');
-				$('.typeBox-wrap:not(.print-on)').addClass('print-off');
-				window.print();
-				//window.print()の実行後、「print-on」「print-off」を削除
-				$('.typeBox-wrap').removeClass('print-on');
-				$('.print-off').removeClass('print-off');
-			});
+			$('.fHBox .clmTtl').flatHeightAll();
+			$(window).resize(function(){$('.fHBox .clmTtl').flatHeightAll();});
+			$('.fHBox .clmTxt').flatHeightAll();
+			$(window).resize(function(){$('.fHBox .clmTxt').flatHeightAll();});
 		});
 	</script>
 
@@ -89,102 +30,8 @@
 		document.createElement( "picture" );
 	</script>
 
-	<!-- Bxslider -->
-	<link rel="stylesheet" type="text/css" media="all" href="common/bxslider/jquery.bxslider.css" />
-	<script type="text/javascript" src="common/bxslider/jquery.bxslider.min.js"></script>
-	<script type="text/javascript">
-	$(document).ready(function() {
-			var obj = $('.bxslider').bxSlider({
-				mode: "fade",
-				auto: true,
-				infiniteLoop: true,
-				responsive: true,
-				speed: 1000,
-				captions: true,
-				displaySlideQty: 1,
-				pager: true,
-				minSlides: 1,
-				maxSlides: 1,
-				moveSlides: 1,
-				slideMargin: 0,
-				pause: 3000,
-
-				onSlideAfter: function() {
-					obj.startAuto();
-			}
-		});
-	});
-	</script>
-
-	<!-- tab change -->
-	<script>
-		$(function () {
-			$('.n02').on('click', function () {
-				var index01 = $('.detailArea__figure').index(this);
-				$('.plan__furniture').css('display', 'none');
-				$('.plan__basic').eq(index01).fadeIn("slow");
-				$('.detailArea__figure').addClass("basic");
-			});
-			$('.n01').on('click', function () {
-				var index02 = $('.detailArea__figure.basic').index(this);
-				$('.plan__basic').css('display', 'none');
-				$('.plan__furniture').eq(index02).fadeIn("slow");
-				$('.detailArea__figure').removeClass("basic");
-			});
-		});
-	</script>
-
-	<!-- modal -->
-	<!-- main.js内 -->
+	<link rel="stylesheet" href="./css/style.css">
 	<script src="./common/js/main.js"></script>
-
-	<style>
-		section {
-			margin-top: 30px;
-			padding-bottom: 30px;
-			border-bottom: 1px dotted #444;
-			text-align: center;
-		}
-
-		img {
-			max-width: 100%;
-		}
-
-		/* slick */
-		.slick-dotted.slick-slider {
-			max-width: 1024px;
-			max-height: 591px;
-			margin: 0 auto;
-			padding: 0;
-		}
-
-		.slick-dots {
-			display: none !important;
-		}
-
-		.slick-slider {
-			max-width: 1024px;
-			max-height: 83px;
-			margin: 10px auto 0;
-			padding: 0;
-		}
-
-		/* bxslider */
-		.mv_wrap {
-			max-width: 1024px;
-			margin: 0 auto;
-		}
-
-		/* printArea */
-		@media print {
-			.printButton,.print-off {
-				display: none !important;
-			}
-		}
-	</style>
-<!-- css -->
-<link rel="stylesheet" href="./css/style.css">
-
 </head>
 <body>
 	<section>
@@ -195,6 +42,13 @@
 			<area shape="circle" coords="189,95,45" href="#" alt="" />
 			<area shape="circle" coords="287,96,46" href="#" alt="" />
 		</map>
+		<!-- rwdImageMaps -->
+		<script src="common/js/jquery.rwdImageMaps.min.js"></script>
+		<script>
+			$(function() {
+				$('img[usemap]').rwdImageMaps();
+			});
+		</script>
 	</section>
 
 	<section>
@@ -202,23 +56,22 @@
 		<a href="https://www.youtube.com/watch?v=Lnt9k15TQO8" class="popup-youtube">
 			<img src="https://placehold.jp/20/999/fff/320x185.png?text=banner" alt="">
 		</a>
+		<!-- magnific-popup -->
+		<link rel="stylesheet" type="text/css" href="common/css/magnific-popup.css" />
+		<script src="common/js/jquery.magnific-popup.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$('.popup-youtube').magnificPopup({
+					type: 'iframe', //iframeで表示
+					// type: 'image', //画像で表示
+					mainClass: 'mfp-fade',
+					removalDelay: 160,
+					preloader: false,
+					fixedContentPos: false
+				});
+			});
+		</script>
 	</section>
-
-	<!-- <section>
-		<h2>slick</h2>
-		<ul class="bxslider">
-			<li><img src="https://placehold.jp/20/999/fff/1024x591.png?text=slide1" alt=""></li>
-			<li><img src="https://placehold.jp/20/999/fff/1024x591.png?text=slide2" alt=""></li>
-			<li><img src="https://placehold.jp/20/999/fff/1024x591.png?text=slide3" alt=""></li>
-			<li><img src="https://placehold.jp/20/999/fff/1024x591.png?text=slide4" alt=""></li>
-		</ul>
-		<ul class="bxslider_thumb">
-			<li><img src="https://placehold.jp/20/999/fff/144x83.png?text=slide1" alt=""></li>
-			<li><img src="https://placehold.jp/20/999/fff/144x83.png?text=slide2" alt=""></li>
-			<li><img src="https://placehold.jp/20/999/fff/144x83.png?text=slide3" alt=""></li>
-			<li><img src="https://placehold.jp/20/999/fff/144x83.png?text=slide4" alt=""></li>
-		</ul>
-	</section> -->
 
 	<section>
 		<h2>bxslider</h2>
@@ -232,7 +85,34 @@
 				<li><img src="https://placehold.jp/20/333/fff/1024x591.png?text=slide4" alt=""></li>
 			</ul>
 		</div>
+		<!-- Bxslider -->
+		<link rel="stylesheet" type="text/css" media="all" href="common/bxslider/jquery.bxslider.css" />
+		<script type="text/javascript" src="common/bxslider/jquery.bxslider.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function() {
+				var obj = $('.bxslider').bxSlider({
+					mode: "fade",
+					auto: true,
+					infiniteLoop: true,
+					responsive: true,
+					speed: 1000,
+					captions: true,
+					displaySlideQty: 1,
+					pager: true,
+					minSlides: 1,
+					maxSlides: 1,
+					moveSlides: 1,
+					slideMargin: 0,
+					pause: 3000,
+
+					onSlideAfter: function() {
+						obj.startAuto();
+				}
+			});
+		});
+		</script>
 	</section>
+
 	<section>
 		<h2>modal</h2>
 		<div id="modalArea" class="modalArea">
@@ -251,20 +131,66 @@
 			<img src="https://placehold.jp/20/999/fff/320x185.png?text=banner" alt="">
 		</a>
 	</section>
+
 	<section>
 		<h2>tab change</h2>
-		<div class="detailArea__tab">
-			<div class="detailArea__tabItem n01">btnA</div>
-			<div class="detailArea__tabItem n02">btnB</div>
-		</div>
-		<div class="detailArea__figure">
-			<div class="plan__furniture">
-				<img src="https://placehold.jp/20/666/fff/880x600.png?text=contentsA" alt="">
+		<div class="floorplan__view">
+			<div class="floorplan__tab">
+				<div class="floorplan__tabItem n01 is--active">tabA</div>
+				<div class="floorplan__tabItem n02">tabB</div>
 			</div>
-			<div class="plan__basic">
-				<img src="https://placehold.jp/20/c9bc7d/fff/880x600.png?text=contentsB" alt="">
+			<div class="floorplan__viewImage">
+				<div class="floorplan__viewImageItem01">
+					<img src="https://placehold.jp/20/666/fff/880x600.png?text=contentsA" alt="">
+				</div>
+				<div class="floorplan__viewImageItem02">
+					<img src="https://placehold.jp/20/c9bc7d/fff/880x600.png?text=contentsB" alt="">
+				</div>
 			</div>
 		</div>
+		<!-- tab change -->
+		<script>
+			$(function () {
+					$('.n02').on('click', function () {
+						var index01 = $('.floorplan__viewImage').index(this);
+						$('.floorplan__viewImageItem01').css('display', 'none');
+						$('.floorplan__viewImageItem02').eq(index01).fadeIn("slow");
+						$('.n01').removeClass("is--active");
+						$(this).addClass("is--active");
+					});
+					$('.n01').on('click', function () {
+						var index02 = $('.floorplan__viewImage.basic').index(this);
+						$('.floorplan__viewImageItem02').css('display', 'none');
+						$('.floorplan__viewImageItem01').eq(index02).fadeIn("slow");
+						$('.n02').removeClass("is--active");
+						$(this).addClass("is--active");
+					});
+				});
+		</script>
+
+		<h2>tab change2</h2>
+		<div class="madoriBox__tab">
+			<p class="madoriBox__tab--item is-selected">tabA</p>
+			<p class="madoriBox__tab--item">tabB</p>
+			<p class="madoriBox__tab--item">tabC</p>
+		</div>
+
+		<div class="madoriBox__content">
+			<img class="madoriImage" src="https://placehold.jp/20/666/fff/880x600.png?text=contentsA" alt="">
+			<img class="madoriImage" src="https://placehold.jp/20/c9bc7d/fff/880x600.png?text=contentsB" alt="">
+			<img class="madoriImage" src="https://placehold.jp/20/e1afa7/fff/880x600.png?text=contentsC" alt="">
+		</div>
+		<script>
+			$(function () {
+				let tabs = $(".madoriBox__tab--item");
+				$(".madoriBox__tab--item").on("click", function () {
+					$(".is-selected").removeClass("is-selected");
+					$(this).addClass("is-selected");
+					var index = tabs.index(this);
+					$(".madoriImage").css('display', 'none').eq(index).fadeIn("slow");
+				})
+			})
+		</script>
 	</section>
 
 	<section>
@@ -281,6 +207,21 @@
 				<img src="https://placehold.jp/20/555/fff/240x70.png?text=btn2" alt="">
 			</p>
 		</div>
+		<!-- PrintArea -->
+		<script>
+			// plan print area
+			$(function () {
+				//個別印刷ボタンをクリックした時
+				$('.printButton').on('click', function () {
+					$(this).parents('.typeBox-wrap').addClass('print-on');
+					$('.typeBox-wrap:not(.print-on)').addClass('print-off');
+					window.print();
+					//window.print()の実行後、「print-on」「print-off」を削除
+					$('.typeBox-wrap').removeClass('print-on');
+					$('.print-off').removeClass('print-off');
+				});
+			});
+		</script>
 	</section>
 </body>
 </html>
