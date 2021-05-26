@@ -88,6 +88,42 @@ $(document).ready(function() {
 
 
 
+## swiper
+
+https://swiperjs.com/
+
+jQueryを使用しないスライダーです
+
+```html
+<link rel="stylesheet" href="common/swiper/css/swiper.min.css">
+
+<script src="common/swiper/js/swiper.min.js"></script>
+```
+
+```javascript
+$(document).ready(function () {
+  var sliderThumbnail = new Swiper('.slider-thumbnail', {
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+  });
+
+  var slider = new Swiper('.slider', {
+    loop: true,
+    speed: 2000,
+    effect: 'fade',
+    autoplay: {
+      delay: 5000,
+    },
+    thumbs: {
+      swiper: sliderThumbnail
+    }
+  });
+});
+```
+
+
 ## modal
 
 シンプルなモーダルです
