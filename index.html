@@ -8,13 +8,17 @@
 
 	<!-- js -->
 	<script src="common/js/jquery.js"></script>
+
 	<!--「aos」CSSの読込-->
-	<link rel="stylesheet" type="text/css" href="common/css/aos.css" media="only screen and (min-width: 640px)" />
+	<link rel="stylesheet" type="text/css" href="common/css/aos.css">
 	<!--「aos」JSの読込-->
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
 
 	<!-- flatHeightAll -->
-	<script src="../common/js/jquery.flatHeightAll.min.js"></script>
+	<script src="common/js/jquery.flatHeightAll.min.js"></script>
 	<script>
 		$(function(){
 			$('.fHBox .clmTtl').flatHeightAll();
@@ -31,9 +35,13 @@
 	</script>
 
 	<link rel="stylesheet" href="./css/style.css">
-	<script src="./common/js/main.js"></script>
+	<script src="common/js/main.js"></script>
 </head>
 <body>
+	<section>
+		<h2>Animate On Scroll Library</h2>
+		<p><a href="https://michalsnik.github.io/aos/" target="_blank">https://michalsnik.github.io/aos/</a></p>
+	</section>
 	<section>
 		<h2>rwdImageMaps</h2>
 		<img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" usemap="#ImageMap" alt="" width="272" height="92">
