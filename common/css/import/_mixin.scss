@@ -39,6 +39,34 @@ $sp: 600px;  // スマホ
   }
 }
 
+// //mediaquery
+// $pc: 1088px; // PC
+// $sp: 768px; // スマホ
+
+// @mixin min-screen($pc) {
+// 	@media screen and (min-width: ($pc)) {
+// 		@content;
+// 	}
+// }
+
+// @mixin max-screen($pc) {
+// 	@media screen and (max-width: ($pc - 1)) {
+// 		@content;
+// 	}
+// }
+
+// @mixin min-screen($sp) {
+// 	@media screen and (min-width: ($sp)) {
+// 		@content;
+// 	}
+// }
+
+// @mixin max-screen($sp) {
+// 	@media screen and (max-width: ($sp - 1)) {
+// 		@content;
+// 	}
+// }
+
 //行間削除マージン
 //$num＝実寸マージン（rem）
 //$fz＝実寸フォントサイズ（rem）
