@@ -154,6 +154,8 @@
 						<img src="https://placehold.jp/20/333/fff/1024x591.png?text=slide4" alt="">
 					</div>
 				</ul>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
 			</div>
 			<div class="swiper-container slider-thumbnail">
 				<ul class="swiper-wrapper thumblist">
@@ -190,6 +192,10 @@
 					effect: 'fade',
 					autoplay: {
 						delay: 5000,
+					},
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
 					},
 					thumbs: {
 						swiper: sliderThumbnail
