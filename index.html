@@ -172,6 +172,7 @@
 						<img src="https://placehold.jp/20/333/fff/240x120.png?text=thum4" alt="">
 					</li>
 				</ul>
+				<div class="swiper-pagination"></div>
 			</div>
 		</div>
 		<!-- swiper -->
@@ -196,6 +197,10 @@
 					navigation: {
 						nextEl: '.swiper-button-next',
 						prevEl: '.swiper-button-prev',
+					},
+					pagination: {
+						el: '.swiper-pagination',
+						type: 'bullets',
 					},
 					thumbs: {
 						swiper: sliderThumbnail
