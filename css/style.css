@@ -9,6 +9,40 @@ img {
   max-width: 100%;
 }
 
+/* heightLine */
+.cf {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.cf:nth-child(n+2) {
+  margin-top: 40px;
+}
+
+.cf::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.cf > div {
+  width: 48.5%;
+}
+
+.cf > div:nth-child(2n-1) {
+  float: left;
+  background: red;
+}
+
+.cf > div:nth-child(2n) {
+  float: right;
+  background: blue;
+}
+
+.cf > div:nth-child(n+3) {
+  margin-top: 20px;
+}
+
 /* bxslider */
 .mv_wrap {
   max-width: 1024px;
