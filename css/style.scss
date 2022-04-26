@@ -225,61 +225,54 @@ img {
 
 
 /* tab change2 */
-.madoriBox {
-	&__tab {
-		width: 100%;
-		margin: 60px auto 0;
-		max-width: 380px;
-		display: flex;
-		justify-content: space-between;
+.detailTab {
+	width: 100%;
+	margin: 60px auto 0;
+	max-width: 380px;
+	display: flex;
+	justify-content: space-between;
 
-		&--item {
-			font-size: 16px;
-			line-height: 1em;
-			padding: 10px 0;
-			font-weight: bold;
-			border: 1px solid #eaeaea;
-			display: block;
-			width: 48%;
-			text-align: center;
-			cursor: pointer;
-			box-sizing: border-box;
-			transition: .4s;
-			color: #0fa1d1;
-
-			@media screen and (max-width: 768px) {
-				font-size: 12px;
-			}
-
-			&:hover {
-				color: #fff;
-				background-color: #0fa1d1;
-				border: 1px solid #0fa1d1;
-			}
-
-			&.is-selected {
-				pointer-events: none;
-				color: #fff;
-				background-color: #0fa1d1;
-				border: 1px solid #0fa1d1;
-			}
-		}
-	}
-
-	&__content {
-		box-sizing: border-box;
-		margin-top: 30px;
-		position: relative;
+	&__item {
+		font-size: 16px;
+		line-height: 1em;
+		padding: 10px 0;
+		font-weight: bold;
+		border: 1px solid #eaeaea;
+		display: block;
+		width: 48%;
 		text-align: center;
+		cursor: pointer;
+		box-sizing: border-box;
+		transition: .4s;
+		color: #0fa1d1;
+
+		@media screen and (max-width: 768px) {
+			font-size: 12px;
+		}
+
+		&:hover {
+			color: #fff;
+			background-color: #0fa1d1;
+			border: 1px solid #0fa1d1;
+		}
+
+		&.is-selected {
+			pointer-events: none;
+			color: #fff;
+			background-color: #0fa1d1;
+			border: 1px solid #0fa1d1;
+		}
 	}
 }
 
-.madoriImage {
-	display: block;
-	margin-right: auto;
-	margin-left: auto;
+.detailBox {
+	&__image {
+		display: block;
+		margin-right: auto;
+		margin-left: auto;
 
-	&:not(:first-child) {
-		display: none;
+		&:not(:first-child) {
+			display: none;
+		}
 	}
 }

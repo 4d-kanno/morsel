@@ -306,25 +306,25 @@
 		</script>
 
 		<h2>tab change2</h2>
-		<div class="madoriBox__tab">
-			<p class="madoriBox__tab--item is-selected">tabA</p>
-			<p class="madoriBox__tab--item">tabB</p>
-			<p class="madoriBox__tab--item">tabC</p>
+		<div class="detailTab">
+			<p class="detailTab__item is-selected">tabA</p>
+			<p class="detailTab__item">tabB</p>
+			<p class="detailTab__item">tabC</p>
 		</div>
 
-		<div class="madoriBox__content">
-			<img class="madoriImage" src="https://placehold.jp/20/666/fff/880x600.png?text=contentsA" alt="">
-			<img class="madoriImage" src="https://placehold.jp/20/c9bc7d/fff/880x600.png?text=contentsB" alt="">
-			<img class="madoriImage" src="https://placehold.jp/20/e1afa7/fff/880x600.png?text=contentsC" alt="">
+		<div class="detailBox">
+			<img class="detailBox__image" src="https://placehold.jp/20/666/fff/880x600.png?text=contentsA" alt="">
+			<img class="detailBox__image" src="https://placehold.jp/20/c9bc7d/fff/880x600.png?text=contentsB" alt="">
+			<img class="detailBox__image" src="https://placehold.jp/20/e1afa7/fff/880x600.png?text=contentsC" alt="">
 		</div>
 		<script>
 			$(function () {
-				var planTabs = $('.madoriBox__tab--item');
+				var planTabs = $('.detailTab__item');
 				$(planTabs).on('click', function () {
 					$('.is-selected').removeClass('is-selected');
 					$(this).addClass('is-selected');
 					var planCont = planTabs.index(this);
-					$('.madoriImage').css('display', 'none').eq(planCont).fadeIn("slow");
+					$('.detailBox__image').css('display', 'none').eq(planCont).fadeIn("slow");
 				})
 			})
 		</script>
