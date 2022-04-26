@@ -319,12 +319,12 @@
 		</div>
 		<script>
 			$(function () {
-				let tabs = $(".madoriBox__tab--item");
-				$(".madoriBox__tab--item").on("click", function () {
-					$(".is-selected").removeClass("is-selected");
-					$(this).addClass("is-selected");
-					var index = tabs.index(this);
-					$(".madoriImage").css('display', 'none').eq(index).fadeIn("slow");
+				var planTabs = $('.madoriBox__tab--item');
+				$(planTabs).on('click', function () {
+					$('.is-selected').removeClass('is-selected');
+					$(this).addClass('is-selected');
+					var planCont = planTabs.index(this);
+					$('.madoriImage').css('display', 'none').eq(planCont).fadeIn("slow");
 				})
 			})
 		</script>
