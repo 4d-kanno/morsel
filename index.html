@@ -188,11 +188,19 @@
 				});
 
 				var slider = new Swiper('.slider', {
+					slidesPerView: 1,
+					centeredSlides: true,
 					loop: true,
+					loopAdditionalSlides: 1,
 					speed: 2000,
 					effect: 'fade',
+						fadeEffect: {
+						crossFade: true,
+					},
 					autoplay: {
 						delay: 5000,
+						disableOnInteraction: false,
+						waitForTransition: false,
 					},
 					navigation: {
 						nextEl: '.swiper-button-next',
@@ -200,11 +208,17 @@
 					},
 					pagination: {
 						el: '.swiper-pagination',
+						clickable: true,
 						type: 'bullets',
 					},
 					thumbs: {
 						swiper: sliderThumbnail
-					}
+					},
+					breakpoints: {
+						600: {
+							slidesPerView: 2,
+						}
+					},
 				});
 			});
 		</script>
