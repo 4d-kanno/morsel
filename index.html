@@ -285,62 +285,45 @@
 
 	<section>
 		<h2>tab change</h2>
-		<div class="floorplan__view">
-			<div class="floorplan__tab">
-				<div class="floorplan__tabItem n01 is--active">tabA</div>
-				<div class="floorplan__tabItem n02">tabB</div>
-			</div>
-			<div class="floorplan__viewImage">
-				<div class="floorplan__viewImageItem01">
-					<img src="https://placehold.jp/20/666/fff/880x600.png?text=contentsA" alt="">
-				</div>
-				<div class="floorplan__viewImageItem02">
-					<img src="https://placehold.jp/20/c9bc7d/fff/880x600.png?text=contentsB" alt="">
-				</div>
-			</div>
-		</div>
-		<!-- tab change -->
-		<script>
-			$(function () {
-					$('.n02').on('click', function () {
-						var index01 = $('.floorplan__viewImage').index(this);
-						$('.floorplan__viewImageItem01').css('display', 'none');
-						$('.floorplan__viewImageItem02').eq(index01).fadeIn("slow");
-						$('.n01').removeClass("is--active");
-						$(this).addClass("is--active");
-					});
-					$('.n01').on('click', function () {
-						var index02 = $('.floorplan__viewImage.basic').index(this);
-						$('.floorplan__viewImageItem02').css('display', 'none');
-						$('.floorplan__viewImageItem01').eq(index02).fadeIn("slow");
-						$('.n02').removeClass("is--active");
-						$(this).addClass("is--active");
-					});
-				});
-		</script>
+		<!--タブ-->
+		<div class="tabWrap">
+			<ul class="tab">
+				<li class="tab__item tab-A is-active">Tab-A</li>
+				<li class="tab__item tab-B">Tab-B</li>
+				<li class="tab__item tab-C">Tab-C</li>
+			</ul>
 
-		<h2>tab change2</h2>
-		<div class="detailTab">
-			<p class="detailTab__item is-selected">tabA</p>
-			<p class="detailTab__item">tabB</p>
-			<p class="detailTab__item">tabC</p>
+			<!--タブを切り替えて表示するコンテンツ-->
+			<div class="panel">
+				<div class="panel__item tab-A is-show"><img src="https://placehold.jp/20/999/fff/1024x591.png?text=content1" alt=""></div>
+				<div class="panel__item tab-B"><img src="https://placehold.jp/20/777/fff/1024x591.png?text=content2" alt=""></div>
+				<div class="panel__item tab-C"><img src="https://placehold.jp/20/555/fff/1024x591.png?text=content3" alt=""></div>
+			</div>
 		</div>
 
-		<div class="detailBox">
-			<img class="detailBox__image" src="https://placehold.jp/20/666/fff/880x600.png?text=contentsA" alt="">
-			<img class="detailBox__image" src="https://placehold.jp/20/c9bc7d/fff/880x600.png?text=contentsB" alt="">
-			<img class="detailBox__image" src="https://placehold.jp/20/e1afa7/fff/880x600.png?text=contentsC" alt="">
-		</div>
 		<script>
-			$(function () {
-				var planTabs = $('.detailTab__item');
-				$(planTabs).on('click', function () {
-					$('.is-selected').removeClass('is-selected');
-					$(this).addClass('is-selected');
-					var planCont = planTabs.index(this);
-					$('.detailBox__image').css('display', 'none').eq(planCont).fadeIn("slow");
-				})
-			})
+			document.addEventListener('DOMContentLoaded', function(){
+				// タブに対してクリックイベントを適用
+				const $tabs = document.getElementsByClassName('tab__item');
+				for(let i = 0; i < $tabs.length; i++) {
+					$tabs[i].addEventListener('click', tabSwitch);
+				}
+
+				// タブをクリックすると実行する関数
+				function tabSwitch(){
+					// 引数で指定したセレクターと一致する直近の祖先要素を取得
+					const $ancestorEle = this.closest('.tabWrap');
+					// タブのclassの値を変更
+					$ancestorEle.getElementsByClassName('is-active')[0].classList.remove('is-active');
+					this.classList.add('is-active');
+					// コンテンツのclassの値を変更
+					$ancestorEle.getElementsByClassName('is-show')[0].classList.remove('is-show');
+					const $groupTabs = $ancestorEle.getElementsByClassName('tab__item');
+					const $arrayTabs = Array.prototype.slice.call($groupTabs);
+					const $index = $arrayTabs.indexOf(this);
+					$ancestorEle.getElementsByClassName('panel__item')[$index].classList.add('is-show');
+				};
+			});
 		</script>
 	</section>
 
