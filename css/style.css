@@ -176,13 +176,13 @@ img {
 .tab__item {
   width: 100%;
   list-style: none;
-  border: solid 1px #CCC;
+  border: solid 1px #ccc;
   text-align: center;
   cursor: pointer;
 }
 .tab__item.is-active {
-  background: #F00;
-  color: #FFF;
+  background: #f00;
+  color: #fff;
   transition: all 0.2s ease-out;
 }
 
@@ -191,4 +191,77 @@ img {
 }
 .panel__item.is-show {
   display: block;
+}
+
+/* accordion */
+.accordionWrap {
+  position: relative;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.accordionCont {
+  box-sizing: border-box;
+  height: 100%;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  transition: 0.5s ease-out;
+  position: relative;
+}
+
+.is-openCont .accordionCont {
+  max-height: 10000px;
+}
+
+.openBtn {
+  position: absolute;
+  top: 18px;
+  left: 10px;
+  margin: auto;
+  background: #999;
+  border-radius: 50%;
+  margin-left: auto;
+  height: 64px;
+  width: 64px;
+  z-index: 1;
+}
+.openBtn:hover {
+  cursor: pointer;
+}
+.openBtn:before, .openBtn:after {
+  background: #fff;
+  content: "";
+  display: block;
+  height: 2px;
+  transition: all 0.5s ease;
+  width: 40px;
+}
+.openBtn:before {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.openBtn:after {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.openBtn.is-activeBtn {
+  transition: 0.5s ease;
+}
+.openBtn.is-activeBtn:before {
+  opacity: 0;
+}
+.openBtn.is-activeBtn:after {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
 }/*# sourceMappingURL=style.css.map */

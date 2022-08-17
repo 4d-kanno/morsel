@@ -1,220 +1,295 @@
 section {
-	margin-top: 30px;
-	padding-bottom: 30px;
-	border-bottom: 1px dotted #444;
-	text-align: center;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px dotted #444;
+  text-align: center;
 }
 
 img {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 /* heightLine */
 .cf {
-	max-width: 1024px;
-	margin: 0 auto;
+  max-width: 1024px;
+  margin: 0 auto;
 
-	&:nth-child(n+2) {
-		margin-top: 40px;
-	}
-	&::after {
-		content: "";
-		display: block;
-		clear: both;
-	}
+  &:nth-child(n + 2) {
+    margin-top: 40px;
+  }
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
 
-	>div {
-		width: 48.5%;
+  > div {
+    width: 48.5%;
 
-		&:nth-child(2n-1) {
-			float: left;
-			background: red;
-		}
+    &:nth-child(2n-1) {
+      float: left;
+      background: red;
+    }
 
-		&:nth-child(2n) {
-			float: right;
-			background: blue;
-		}
+    &:nth-child(2n) {
+      float: right;
+      background: blue;
+    }
 
-		&:nth-child(n+3) {
-			margin-top: 20px;
-		}
-	}
+    &:nth-child(n + 3) {
+      margin-top: 20px;
+    }
+  }
 }
 
 /* bxslider */
 .mv_wrap {
-	max-width: 1024px;
-	margin: 0 auto;
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 /* swiper */
 .slider {
-	margin-top: 80px !important;
+  margin-top: 80px !important;
 
-	&-thumbnail {
-		margin-top: 40px !important;
-	}
+  &-thumbnail {
+    margin-top: 40px !important;
+  }
 }
 
 .swiper-container {
-	line-height: 0;
+  line-height: 0;
 }
 
 .thumblist {
-	max-width: 1024px;
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	padding: 0;
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0;
 
-	&-item {
-		width: calc(240 / 1024 * 100%) !important;
-		position: relative;
-		cursor: pointer;
-		list-style: none;
+  &-item {
+    width: calc(240 / 1024 * 100%) !important;
+    position: relative;
+    cursor: pointer;
+    list-style: none;
 
-		&:before {
-			content: "";
-			position: absolute;
-			top: 0;
-			right: 0;
-			left: 0;
-			bottom: 0;
-			width: 100%;
-			background: rgba(255, 255, 255, 0.6);
-			z-index: 100;
-			transition: 0.2s;
-			pointer-events: none;
-		}
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.6);
+      z-index: 100;
+      transition: 0.2s;
+      pointer-events: none;
+    }
 
-		&:hover:before {
-			background: none;
-			transition: 0.2s;
-		}
+    &:hover:before {
+      background: none;
+      transition: 0.2s;
+    }
 
-		&.swiper-slide-active:before {
-			background: none;
-			transition: 0.2s;
-		}
-	}
-
+    &.swiper-slide-active:before {
+      background: none;
+      transition: 0.2s;
+    }
+  }
 }
 
 @media only screen and (max-width: 768px) {
-	.slider {
-		margin-top: 40px !important;
+  .slider {
+    margin-top: 40px !important;
 
-		&-thumbnail {
-			margin-top: 20px !important;
-		}
-	}
+    &-thumbnail {
+      margin-top: 20px !important;
+    }
+  }
 }
 
 /* printArea */
 @media print {
-
-	.printButton,
-	.print-off {
-		display: none !important;
-	}
+  .printButton,
+  .print-off {
+    display: none !important;
+  }
 }
 
 /* modal */
 .modalArea {
-	display: none;
-	position: fixed;
-	z-index: 999;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	color: #000;
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #000;
 }
 
 .modalBg {
-	width: 100%;
-	height: 100%;
-	background-color: rgba(30, 30, 30, 0.9);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.9);
 }
 
 .modalWrapper {
-	position: absolute;
-	top: 70%;
-	left: 50%;
-	transform: translate(-50%, -70%);
-	width: 70%;
-	max-width: 980px;
-	padding: 10px 30px;
-	background-color: #fff;
-	height: 70%;
-	overflow: auto;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  width: 70%;
+  max-width: 980px;
+  padding: 10px 30px;
+  background-color: #fff;
+  height: 70%;
+  overflow: auto;
 }
 
 .modalContents p {
-	font-size: 14px;
-	margin-bottom: 15px;
-	text-align: left;
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: left;
 }
 
 .closeModal {
-	position: absolute;
-	top: 0.1rem;
-	right: 0.8rem;
-	cursor: pointer;
-	font-size: 40px;
+  position: absolute;
+  top: 0.1rem;
+  right: 0.8rem;
+  cursor: pointer;
+  font-size: 40px;
 }
 
 @media screen and (max-width: 768px) {
-	.modalContents {
-		margin-top: 10px;
-	}
+  .modalContents {
+    margin-top: 10px;
+  }
 
-	.closeModal {
-		position: absolute;
-		top: 0.1rem;
-		cursor: pointer;
-		font-size: 40px;
-	}
+  .closeModal {
+    position: absolute;
+    top: 0.1rem;
+    cursor: pointer;
+    font-size: 40px;
+  }
 }
-
 
 /* tab change */
 
 .tabWrap {
-	max-width: 1024px;
-	margin: 0 auto;
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 .tab {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+
+  &__item {
+    width: 100%;
+    list-style: none;
+    border: solid 1px #ccc;
+    text-align: center;
+    cursor: pointer;
+
+    &.is-active {
+      background: #f00;
+      color: #fff;
+      transition: all 0.2s ease-out;
+    }
+  }
+}
+
+.panel {
+  &__item {
+    display: none;
+
+    &.is-show {
+      display: block;
+    }
+  }
+}
+
+/* accordion */
+
+.accordionWrap {
+  position: relative;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.accordionCont {
+	box-sizing: border-box;
+	height: 100%;
+	max-height: 0;
+	overflow: hidden;
 	padding: 0;
+	transition: .5s ease-out;
+	position: relative;
 
-	&__item {
-		width: 100%;
-		list-style: none;
-		border:solid 1px #CCC;
-		text-align:center;
-		cursor:pointer;
-
-		&.is-active{
-			background:#F00;
-			color:#FFF;
-			transition: all 0.2s ease-out;
-		}
-	}
 }
 
-.panel{
-
-	&__item {
-		display:none;
-
-		&.is-show{
-		  display:block;
-		}
-	}
+.is-openCont .accordionCont {
+  max-height: 10000px;
 }
 
+.openBtn {
+  position: absolute;
+  top: 18px;
+  left: 10px;
+  margin: auto;
+  background: #999;
+  border-radius: 50%;
+  margin-left: auto;
+  height: 64px;
+  width: 64px;
+  z-index: 1;
 
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:before,
+  &:after {
+    background: #fff;
+    content: "";
+    display: block;
+    height: 2px;
+    transition: all 0.5s ease;
+    width: 40px;
+  }
+
+  &:before {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &:after {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: rotate(90deg);
+  }
+
+  &.is-activeBtn {
+	transition: .5s ease;
+
+    &:before {
+      opacity: 0;
+    }
+
+    &:after {
+      transform: rotate(360deg);
+    }
+  }
+}

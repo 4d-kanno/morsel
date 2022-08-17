@@ -359,6 +359,32 @@
 	</section>
 
 	<section>
+		<h2>accordion</h2>
+		<div class="accordionWrap js-openCont">
+			<img src="https://placehold.jp/20/333/fff/1024x100.png?text=bnr1" alt="">
+			<div class="openBtn js-openBtn"></div>
+			<div class="accordionCont">
+				<img src="https://placehold.jp/20/999/fff/600x800.png?text=contents1" alt="">
+			</div>
+		</div>
+		<!-- PrintArea -->
+		<script>
+			function accordionPlan() {
+	          const $openBtn = document.getElementsByClassName('js-openBtn');
+	          const $openCont = document.getElementsByClassName('js-openCont');
+
+	          for (let i = 0; i < $openBtn.length; i++) {
+	            $openBtn[i].addEventListener('click', function () {
+	              this.classList.toggle('is-activeBtn');
+	              $openCont[i].classList.toggle('is-openCont');
+	            });
+	          }
+	        }
+	        accordionPlan();
+		</script>
+	</section>
+
+	<section>
 		<h2>FloatBnr</h2>
 		<div id="float">
 			<div id="floatArea">
